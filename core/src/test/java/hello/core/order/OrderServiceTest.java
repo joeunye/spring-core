@@ -1,2 +1,4 @@
-package hello.core.order;public class OrderServiceTest {
+package hello.core.order;
+
+public class OrderServiceTest {
 }

@@ -1,5 +1,8 @@
 package hello.core;
 
+import hello.core.member.MemberService;
+import hello.core.member.MemberServiceImpl;
+import hello.core.member.member;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -8,7 +11,11 @@ public class CoreApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CoreApplication.class, args);
-		System.out.println("hello");
+
+		MemberService memberService = new MemberServiceImpl();
+
+		member member = new member()
+
 	}
 
 }

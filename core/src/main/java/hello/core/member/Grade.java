@@ -1,2 +1,7 @@
-package hello.core.member;public class Grade {
+package hello.core.member;
+
+public enum Grade {
+
+    BASIC,
+    VIP
 }
