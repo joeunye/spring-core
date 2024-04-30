@@ -1,23 +1,32 @@
 package hello.core.member;
 
+import hello.core.AppConfig;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class MemberServiceTest {
 
-    MemberService memberService = new MemberServiceImpl();
+    MemberService memberService;
+
+    @BeforeEach
+    void setUp() {
+        AppConfig appConfig = new AppConfig();
+        memberService = appConfig.memberService();
+    }
 
     @Test
     void join() {
 
-        member member = new member(1L, "memberA", Grade.VIP);
+        member memberA = new member(1L, "memberA", Grade.VIP);
+        member memberB = new member(2L, "memberB", Grade.VIP);
 
-        MemberService.join(member);
-        member findMember = MemberService.findMember(1L);
+        memberService.join(memberA);
+        memberService.join(memberB);
 
-        Assertions.assertThat(member).isEqualTo(findMember);
+        member findMemberA = MemberService.findMember(1L);
+
+        Assertions.assertTrue(member).isEqualTo(findMemberA);
     }
 
     @Test
